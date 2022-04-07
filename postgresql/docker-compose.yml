@@ -1,0 +1,16 @@
+version: "3.0"
+
+services:
+    postgresql-server:
+      image: postgres:latest
+      container_name: postgresql-server
+      restart: always
+      ports:
+        - 5432:5432
+      volumes:
+        - ./data:/var/lib/postgresql/data
+      environment:
+        POSTGRES_DB: postgres
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: password
+        ALLOW_IP_RANGE: 0.0.0.0/0
